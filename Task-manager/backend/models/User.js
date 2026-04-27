@@ -33,7 +33,7 @@ const User = sequelize.define("User", {
 }, {
   timestamps: true,
 
-  // 🔥 Bonus: Hide password automatically
+  //  Bonus: Hide password automatically
   defaultScope: {
     attributes: { exclude: ["password"] },
   },

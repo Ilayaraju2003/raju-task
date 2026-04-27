@@ -14,7 +14,7 @@ exports.verifyAccessToken = async (req, res, next) => {
       });
     }
 
-    // 🔹 Extract token from "Bearer token"
+    //  Extract token from "Bearer token"
     const token = authHeader.split(" ")[1];
 
     let decoded;
@@ -27,7 +27,7 @@ exports.verifyAccessToken = async (req, res, next) => {
       });
     }
 
-    // 🔹 Sequelize way
+    //  Sequelize way
     const user = await User.findByPk(decoded.id);
 
     if (!user) {
@@ -37,7 +37,7 @@ exports.verifyAccessToken = async (req, res, next) => {
       });
     }
 
-    // 🔹 Attach minimal user info
+    //  Attach minimal user info
     req.user = {
       id: user.id,
       email: user.email,

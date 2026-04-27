@@ -6,7 +6,7 @@ const createAccessToken = (payload) => {
   }
 
   return jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET, {
-    expiresIn: "1d", // token expires in 1 day
+    expiresIn: "1d", 
   });
 };
 

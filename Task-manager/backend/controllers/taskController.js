@@ -1,7 +1,7 @@
 const { Task } = require("../models");
 
 
-// 🔹 Get all tasks
+//  Get all tasks
 exports.getTasks = async (req, res) => {
   try {
     const tasks = await Task.findAll({
@@ -26,7 +26,7 @@ exports.getTasks = async (req, res) => {
 
 
 
-// 🔹 Get single task
+// Get single task
 exports.getTask = async (req, res) => {
   try {
     const task = await Task.findOne({
@@ -60,7 +60,7 @@ exports.getTask = async (req, res) => {
 
 
 
-// 🔹 Create task
+//  Create task
 exports.postTask = async (req, res) => {
   try {
     const { title, description, status } = req.body; // ✅ FIX
@@ -95,7 +95,7 @@ exports.postTask = async (req, res) => {
 };
 
 
-// 🔹 Update task
+//  Update task
 exports.putTask = async (req, res) => {
   try {
     const { title, description, status } = req.body;
@@ -109,7 +109,7 @@ exports.putTask = async (req, res) => {
       });
     }
 
-    // ✅ Ownership check
+    //  Ownership check
     if (task.UserId !== req.user.id) {
       return res.status(403).json({
         status: false,
@@ -140,7 +140,7 @@ exports.putTask = async (req, res) => {
 
 
 
-// 🔹 Delete task
+//  Delete task
 exports.deleteTask = async (req, res) => {
   try {
     const task = await Task.findByPk(req.params.taskId);
@@ -152,7 +152,7 @@ exports.deleteTask = async (req, res) => {
       });
     }
 
-    // ✅ Ownership check
+    //  Ownership check
     if (task.UserId !== req.user.id) {
       return res.status(403).json({
         status: false,

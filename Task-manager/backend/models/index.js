@@ -1,7 +1,7 @@
 const User = require("./User");
 const Task = require("./Task");
 
-// 🔗 Define relationships
+//  Define relationships
 User.hasMany(Task, {
   foreignKey: "UserId",
   onDelete: "CASCADE",

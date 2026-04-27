@@ -16,18 +16,18 @@ const Task = () => {
   const [task, setTask] = useState(null);
   const [formData, setFormData] = useState({
     title: "",
-    description: "", // ✅ added
+    description: "", 
     status: "Todo",
   });
 
   const [formErrors, setFormErrors] = useState({});
 
-  // 🧠 Page title
+  //  Page title
   useEffect(() => {
     document.title = mode === "add" ? "Add Task" : "Update Task";
   }, [mode]);
 
-  // 🔄 Fetch task
+  //  Fetch task
   useEffect(() => {
     if (mode === "update" && token && taskId) {
       const config = {
@@ -42,7 +42,7 @@ const Task = () => {
             setTask(data.task);
             setFormData({
               title: data.task.title || "",
-              description: data.task.description || "", // ✅ added
+              description: data.task.description || "", 
               status: data.task.status || "Todo",
             });
           }
@@ -56,7 +56,7 @@ const Task = () => {
     }
   }, [mode, token, taskId, fetchData]);
 
-  // ✏️ Handle input
+  //  Handle input
   const handleChange = (e) => {
     setFormData((prev) => ({
       ...prev,
@@ -64,17 +64,17 @@ const Task = () => {
     }));
   };
 
-  // 🔄 Reset
+  //  Reset
   const handleReset = (e) => {
     e.preventDefault();
     setFormData({
       title: task?.title || "",
-      description: task?.description || "", // ✅ added
+      description: task?.description || "", 
       status: task?.status || "Todo",
     });
   };
 
-  // ✅ Submit
+  // Submit
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -89,7 +89,7 @@ const Task = () => {
       const config = {
         url: mode === "add" ? "/tasks" : `/tasks/${taskId}`,
         method: mode === "add" ? "post" : "put",
-        data: formData, // ✅ now includes description
+        data: formData, 
         headers: { Authorization: `Bearer ${token}` },
       };
 
@@ -103,7 +103,7 @@ const Task = () => {
   return (
     <MainLayout>
       <form
-        onSubmit={handleSubmit} // ✅ better than button onClick
+        onSubmit={handleSubmit} 
         className="m-auto my-16 max-w-[1000px] bg-white p-8 border-2 shadow-md rounded-md"
       >
         {loading ? (

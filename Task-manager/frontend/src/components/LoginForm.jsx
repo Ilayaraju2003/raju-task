@@ -20,7 +20,7 @@ const LoginForm = ({ redirectUrl }) => {
     (state) => state.authReducer
   );
 
-  // ✅ Redirect after login
+  //  Redirect after login
   useEffect(() => {
     if (isLoggedIn) {
       navigate(redirectUrl || "/");
@@ -35,7 +35,7 @@ const LoginForm = ({ redirectUrl }) => {
     });
   };
 
-  // ✅ Submit
+  //  Submit
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -55,7 +55,7 @@ const LoginForm = ({ redirectUrl }) => {
     dispatch(postLoginData(formData.email, formData.password));
   };
 
-  // ⚠️ Field error UI
+  //  Field error UI
   const fieldError = (field) => (
     <p
       className={`mt-1 text-pink-600 text-sm ${
@@ -69,7 +69,7 @@ const LoginForm = ({ redirectUrl }) => {
 
   return (
     <form
-      onSubmit={handleSubmit} // ✅ IMPORTANT
+      onSubmit={handleSubmit} //  IMPORTANT
       className="m-auto my-16 max-w-[500px] bg-white p-8 border-2 shadow-md rounded-md"
     >
       {loading ? (

@@ -29,7 +29,7 @@ const Home = () => {
         </div>
       ) : (
         <>
-          {/* ✅ SAFE ACCESS */}
+          {/* SAFE ACCESS */}
           <h1 className='text-lg mt-8 mx-8 border-b border-b-gray-300'>
             Welcome {user?.name || "User"}
           </h1>
