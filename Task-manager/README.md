@@ -1,193 +1,70 @@
-# MERN Task Manager
+Task Management Application (MERN + PostgreSQL)
 
-A MERN application for basic tasks management.
-![image](https://user-images.githubusercontent.com/86913048/227101123-f8a35258-9c21-4479-86e8-055659ab75e2.png)
+A full-stack task management application built using the MERN stack with PostgreSQL (Sequelize ORM) for database management.
 
-## Table of Contents
+🚀 Live Demo
 
-- [Features](#features)
-- [Tools and Technologies](#tools-and-technologies)
-- [Dependencies](#dependencies)
-- [Dev-dependencies](#dev-dependencies)
-- [Prerequisites](#prerequisites)
-- [Installation and setup](#installation-and-setup)
-- [Backend API](#backend-api)
-- [frontend pages](#frontend-pages)
-- [npm scripts](#npm-scripts)
-- [Useful Links](#useful-links)
-- [Contact](#contact)
+🔗 https://raju-task.vercel.app/
 
-## Features
+📌 Features
+   👤 User Features
+      - Signup & Login (JWT Authentication)
+      - Create, view, update, and delete tasks
+      - Task status management:
+         - Todo
+         - In Progress
+         - Completed
+   📊 Dashboard
+      - Visual representation of tasks using Chart.js
+      - Task statistics fetched from backend APIs
 
-### User-side features
+🛠 Tech Stack
+   - Frontend
+      - React.js
+      - Redux Toolkit / Context API
+      - Tailwind CSS
+      - Chart.js
+   
+   - Backend
+      - Node.js
+      - Express.js
+      - PostgreSQL
+      - Sequelize ORM
+      - JWT Authentication
+        
+🔐 Authentication
+      - Secure login using JWT
+      - Protected routes (frontend & backend)
+      - Middleware for token verification
 
-- Signup
-- Login
-- Logout
-- Add tasks
-- View tasks
-- Update tasks
-- Delete tasks
+📡 API Endpoints
 
-### Developer-side features
+POST   /api/auth/signup
+POST   /api/auth/login
 
-- Toasts for success and error messages
-- Form validations in frontend and backend
-- Fully Responsive Navbar
-- Token based Authentication
-- Use of 404 page for wrong urls
-- Relevant redirects
-- Global user state using Redux
-- Custom Loaders
-- Use of layout component for pages
-- Use of theme colors
-- No external CSS files needed (made using Tailwind CSS)
-- Usage of Tooltips
-- Dynamic document titles
-- Redirect to previous page after login
-- Use of various React hooks
-- Custom hook also used (useFetch)
-- Routes protection
-- Middleware for verifying the user in backend
-- Use of different HTTP status codes for sending responses
-- Standard pratices followed
+GET    /api/tasks
+POST   /api/tasks
+PUT    /api/tasks/:id
+DELETE /api/tasks/:id
 
-## Tools and Technologies
+⚙️ Installation & Setup
+# Install dependencies
+npm install
 
-- HTML
-- CSS
-- Javascript
-- Tailwind CSS
-- Node.js
-- Express.js
-- React
-- Redux
-- Mongodb
+# Setup environment variables
+# Create .env file and add:
+DATABASE_URL=
+JWT_SECRET=
 
-## Dependencies
+# Run backend
+npm run dev
 
-Following are the major dependencies of the project:
+# Run frontend
+npm start
 
-- axios
-- react
-- react-dom
-- react-redux
-- react-router-dom
-- react-toastify
-- redux
-- redux-thunk
-- bcrypt
-- cors
-- dotenv
-- express
-- jsonwebtoken
-- mongoose
-
-## Dev-dependencies
-
-Following are the major dev-dependencies of the project:
-
-- nodemon
-- concurrently
-
-## Prerequisites
-
-- Node.js must be installed on the system.
-- You should have a MongoDB database.
-- You should have a code editor (preferred: VS Code)
-
-## Installation and Setup
-
-1. Install all the dependencies
-
-   ```sh
-   npm run install-all
-   ```
-
-2. Create a file named ".env" inside the backend folder. Add data from .env.example file and substitute your credentials there.
-
-3. Start the application
-
-   ```sh
-   npm run dev
-   ```
-
-4. Go to http://localhost:3000
-
-## Backend API
-
-<pre>
-- POST     /api/auth/signup
-- POST     /api/auth/login
-- GET      /api/tasks
-- GET      /api/tasks/:taskId
-- POST     /api/tasks
-- PUT      /api/tasks/:taskId
-- DELETE   /api/tasks/:taskId
-- GET      /api/profile
-</pre>
-
-## Frontend pages
-
-<pre>
-- /                 Home Screen (Public home page for guests and private dashboard (tasks) for logged-in users)
-- /signup           Signup page
-- /login            Login page
-- /tasks/add        Add new task
-- /tasks/:taskId    Edit a task
-</pre>
-
-## npm scripts
-
-At root:
-
-- `npm run dev`: Starts both backend and frontend
-- `npm run dev-server`: Starts only backend
-- `npm run dev-client`: Starts only frontend
-- `npm run install-all`: Installs all dependencies and dev-dependencies required at root, at frontend and at backend.
-
-Inside frontend folder:
-
-- `npm start`: Starts frontend in development mode
-- `npm run build`: Builds the frontend for production to the build folder
-- `npm test`: Launches the test runner in the interactive watch mode
-- `npm run eject`: This will remove the single build dependency from the frontend.
-
-Inside backend folder:
-
-- `npm run dev`: Starts backend using nodemon.
-- `npm start`: Starts backend without nodemon.
-
-## Useful Links
-
-- This project
-
-  - Github Repo: https://github.com/aayush301/MERN-task-manager
-
-- Official Docs
-
-  - Reactjs docs: https://reactjs.org/docs/getting-started.html
-  - npmjs docs: https://docs.npmjs.com/
-  - Mongodb docs: https://docs.mongodb.com/manual/introduction/
-  - Github docs: https://docs.github.com/en/get-started/quickstart/hello-world
-
-- Youtube tutorials
-
-  - Expressjs: https://youtu.be/L72fhGm1tfE
-  - React: https://youtu.be/EHTWMpD6S_0
-  - Redux: https://youtu.be/1oU_YGhT7ck
-
-- Download links
-
-  - Nodejs download: https://nodejs.org/
-  - VS Code download: https://code.visualstudio.com/
-
-- Cheatsheets
-  - Git cheatsheet: https://education.github.com/git-cheat-sheet-education.pdf
-  - VS Code keyboard shortcuts: https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf
-  - CSS Selectors Cheatsheet: https://frontend30.com/css-selectors-cheatsheet/
-
-## Contact
-
-- Email: aayush5521186@gmail.com
-- Linkedin: https://www.linkedin.com/in/aayush12/
+✨ Additional Features
+      - Form validation (frontend & backend)
+      - Error handling
+      - Loading indicators
+      - Responsive UI
+      - Clean and modular code structure
