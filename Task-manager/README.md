@@ -37,30 +37,38 @@ A full-stack task management application built using the MERN stack with Postgre
       - Protected routes (frontend & backend)
       - Middleware for token verification
 
-📡 API Endpoints
-
-POST   /api/auth/signup
-POST   /api/auth/login
-
-GET    /api/tasks
-POST   /api/tasks
-PUT    /api/tasks/:id
-DELETE /api/tasks/:id
-
 ⚙️ Installation & Setup
-# Install dependencies
-npm install
+<pre>
+Install dependencies    npm install
 
-# Setup environment variables
-# Create .env file and add:
-DATABASE_URL=
-JWT_SECRET=
+Run backend             npm run dev
 
-# Run backend
-npm run dev
+Run frontend            npm start
+</pre>
 
-# Run frontend
-npm start
+## Backend API
+
+<pre>
+- POST     /api/auth/signup
+- POST     /api/auth/login
+- GET      /api/tasks
+- GET      /api/tasks/:taskId
+- POST     /api/tasks
+- PUT      /api/tasks/:taskId
+- DELETE   /api/tasks/:taskId
+- GET      /api/profile
+</pre>
+
+## Frontend pages
+
+<pre>
+- /                 Home Screen (Public home page for guests and private dashboard (tasks) for logged-in users)
+- /signup           Signup page
+- /login            Login page
+- /tasks/add        Add new task
+- /tasks/:taskId    Edit a task
+</pre>
+
 
 ✨ Additional Features
       - Form validation (frontend & backend)
