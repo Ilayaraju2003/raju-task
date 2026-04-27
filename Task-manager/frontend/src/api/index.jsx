@@ -10,12 +10,7 @@ api.interceptors.request.use((config) => {
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
-  axios.get("/api/profile", {
-  headers: {
-    Authorization: `Bearer ${token}`
-  }
-});
-
+ 
   return config;
 });
 
