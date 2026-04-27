@@ -32,7 +32,8 @@ A full-stack task management application built using the MERN stack with Postgre
       - Sequelize ORM
       - JWT Authentication
         
-🔐 Authentication
+   🔐 Authentication
+
       - Secure login using JWT
       - Protected routes (frontend & backend)
       - Middleware for token verification
@@ -70,7 +71,8 @@ Run frontend            npm start
 </pre>
 
 
-✨ Additional Features
+   ✨ Additional Features
+
       - Form validation (frontend & backend)
       - Error handling
       - Loading indicators
